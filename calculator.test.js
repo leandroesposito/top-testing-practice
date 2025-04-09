@@ -83,3 +83,58 @@ test("calculator adds", () => {
     expect(calc.add(test.a, test.b)).toBeCloseTo(test.expect);
   });
 });
+
+test("calculator subtract", () => {
+  const intTests = [
+    {
+      a: 0,
+      b: 0,
+      expect: 0,
+    },
+    {
+      a: 1,
+      b: 1,
+      expect: 0,
+    },
+    {
+      a: 3,
+      b: 2,
+      expect: 1,
+    },
+    {
+      a: -1,
+      b: 1,
+      expect: -2,
+    },
+    {
+      a: -1,
+      b: -1,
+      expect: 0,
+    },
+    {
+      a: 5,
+      b: 7,
+      expect: -2,
+    },
+    {
+      a: -5,
+      b: 7,
+      expect: -12,
+    },
+    {
+      a: 8,
+      b: 3,
+      expect: 5,
+    },
+    {
+      a: 8,
+      b: -3,
+      expect: 11,
+    },
+  ];
+
+  const calc = calculator();
+  intTests.forEach((test) => {
+    expect(calc.subtract(test.a, test.b)).toBe(test.expect);
+  });
+});
