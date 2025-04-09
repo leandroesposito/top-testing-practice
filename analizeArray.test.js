@@ -58,3 +58,13 @@ test("analizeArray min", () => {
     expect(test.result.min).toBeCloseTo(test.expected.min);
   });
 });
+test("analizeArray max", () => {
+  testCases.forEach((test) => {
+    expect(test.result.max).toBeCloseTo(test.expected.max);
+  });
+});
+test("analizeArray length", () => {
+  testCases.forEach((test) => {
+    expect(test.result.length).toBeCloseTo(test.expected.length);
+  });
+});
