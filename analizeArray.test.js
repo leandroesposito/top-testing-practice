@@ -52,3 +52,9 @@ test("analizeArray average", () => {
     expect(test.result.average).toBeCloseTo(test.expected.average);
   });
 });
+
+test("analizeArray min", () => {
+  testCases.forEach((test) => {
+    expect(test.result.min).toBeCloseTo(test.expected.min);
+  });
+});
