@@ -250,3 +250,11 @@ test("calculator divide", () => {
   expect(() => calc.divide(1, 0)).toThrow();
   expect(() => calc.divide(1, 0)).toThrow("cannot divide by 0");
 });
+
+test("calculator multiply", () => {
+  const calc = calculator();
+  expect(calc.multiply()).toBeDefined();
+
+  expect(calc.multiply(1, 1)).toBe(1);
+  expect(calc.multiply(3, 2)).toBe(6);
+});
