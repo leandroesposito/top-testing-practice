@@ -256,5 +256,78 @@ test("calculator multiply", () => {
   expect(calc.multiply()).toBeDefined();
 
   expect(calc.multiply(1, 1)).toBe(1);
+  expect(calc.multiply(1, 0)).toBe(0);
+  expect(calc.multiply(3, 0)).toBe(0);
+  expect(calc.multiply(100, 0)).toBe(0);
+  expect(calc.multiply(100, 100)).toBe(100 ** 2);
   expect(calc.multiply(3, 2)).toBe(6);
+
+  const intTests = [
+    {
+      a: 1,
+      b: 1,
+      expect: 1,
+    },
+    {
+      a: 3,
+      b: 2,
+      expect: 6,
+    },
+    {
+      a: -1,
+      b: 1,
+      expect: -1,
+    },
+    {
+      a: -1,
+      b: -1,
+      expect: 1,
+    },
+    {
+      a: 5,
+      b: 7,
+      expect: 35,
+    },
+    {
+      a: -5,
+      b: 7,
+      expect: -35,
+    },
+    {
+      a: 8,
+      b: 3,
+      expect: 24,
+    },
+  ];
+
+  intTests.forEach((test) => {
+    expect(calc.multiply(test.a, test.b)).toBe(test.expect);
+  });
+
+  const floatTests = [
+    {
+      a: 0.3,
+      b: 0.5,
+      expect: 0.15,
+    },
+    {
+      a: 9.9,
+      b: 9.9,
+      expect: 98.01,
+    },
+    {
+      a: -0.1,
+      b: 1,
+      expect: -0.1,
+    },
+    {
+      a: -0.14,
+      b: -3.6,
+      expect: 0.504,
+    },
+  ];
+
+  floatTests.forEach((test) => {
+    expect(calc.multiply(test.a, test.b)).toBeCloseTo(test.expect);
+  });
 });
