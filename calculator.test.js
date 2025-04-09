@@ -11,3 +11,75 @@ test("calculator has functions", () => {
   expect(calc.divide());
   expect(calc.multiply());
 });
+
+test("calculator adds", () => {
+  const intTests = [
+    {
+      a: 0,
+      b: 0,
+      expect: 0,
+    },
+    {
+      a: 1,
+      b: 1,
+      expect: 2,
+    },
+    {
+      a: 1,
+      b: 1,
+      expect: 2,
+    },
+    {
+      a: 3,
+      b: 5,
+      expect: 8,
+    },
+    {
+      a: -1,
+      b: 1,
+      expect: 0,
+    },
+    {
+      a: -1,
+      b: -1,
+      expect: -2,
+    },
+  ];
+
+  const floatTests = [
+    {
+      a: 0.1,
+      b: 0,
+      expect: 0.1,
+    },
+    {
+      a: 0.3,
+      b: 0.5,
+      expect: 0.8,
+    },
+    {
+      a: 9.9,
+      b: 9.9,
+      expect: 19.8,
+    },
+    {
+      a: -0.1,
+      b: 1,
+      expect: 0.9,
+    },
+    {
+      a: -0.14,
+      b: -3.6,
+      expect: -3.74,
+    },
+  ];
+
+  const calc = calculator();
+  intTests.forEach((test) => {
+    expect(calc.add(test.a, test.b)).toBe(test.expect);
+  });
+
+  floatTests.forEach((test) => {
+    expect(calc.add(test.a, test.b)).toBeCloseTo(test.expect);
+  });
+});
