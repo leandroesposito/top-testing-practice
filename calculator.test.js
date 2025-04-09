@@ -170,3 +170,83 @@ test("calculator subtract", () => {
     expect(calc.subtract(test.a, test.b)).toBeCloseTo(test.expect);
   });
 });
+
+test("calculator divide", () => {
+  const calc = calculator();
+
+  expect(calc.divide()).toBeDefined();
+
+  expect(calc.divide(1, 1)).toBe(1);
+
+  const intTests = [
+    {
+      a: 1,
+      b: 1,
+      expect: 1,
+    },
+    {
+      a: 3,
+      b: 2,
+      expect: 1.5,
+    },
+    {
+      a: -1,
+      b: 1,
+      expect: -1,
+    },
+    {
+      a: -1,
+      b: -1,
+      expect: 1,
+    },
+    {
+      a: 5,
+      b: 7,
+      expect: 5 / 7,
+    },
+    {
+      a: -5,
+      b: 7,
+      expect: -5 / 7,
+    },
+    {
+      a: 8,
+      b: 3,
+      expect: 8 / 3,
+    },
+  ];
+
+  intTests.forEach((test) => {
+    expect(calc.divide(test.a, test.b)).toBeCloseTo(test.expect);
+  });
+
+  const floatTests = [
+    {
+      a: 0.3,
+      b: 0.5,
+      expect: 0.3 / 0.5,
+    },
+    {
+      a: 9.9,
+      b: 9.9,
+      expect: 1,
+    },
+    {
+      a: -0.1,
+      b: 1,
+      expect: -0.1,
+    },
+    {
+      a: -0.14,
+      b: -3.6,
+      expect: 0.14 / 3.6,
+    },
+  ];
+
+  floatTests.forEach((test) => {
+    expect(calc.divide(test.a, test.b)).toBeCloseTo(test.expect);
+  });
+
+  expect(() => calc.divide(1, 0)).toThrow();
+  expect(() => calc.divide(1, 0)).toThrow("cannot divide by 0");
+});
