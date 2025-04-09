@@ -47,10 +47,6 @@ const testCases = [
   },
 ];
 
-results = testCases.map((test) => {
-  return { test, result: analizeArray(test) };
-});
-
 test("analizeArray average", () => {
   testCases.forEach((test) => {
     expect(test.result.average).toBeCloseTo(test.expected.average);
