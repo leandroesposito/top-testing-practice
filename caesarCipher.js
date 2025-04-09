@@ -11,5 +11,5 @@ export default caesarCipher = (string, shift) => {
     resArr.push(newCode);
   }
 
-  return String.fromCharCode(resArr);
+  return String.fromCharCode(...resArr);
 };
