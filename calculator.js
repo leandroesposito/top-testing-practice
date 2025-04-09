@@ -3,7 +3,9 @@ export default function calculator() {
     add: function add(a, b) {
       return a + b;
     },
-    subtract: function subtract() {},
+    subtract: function subtract(a, b) {
+      return a - b;
+    },
     divide: function divide() {},
     multiply: function multiply() {},
   };
