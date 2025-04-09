@@ -45,6 +45,36 @@ test("caesarCipher returns cipher string", () => {
       shift: 2,
       result: "Cd",
     },
+    {
+      value: "AbC",
+      shift: 2,
+      result: "CdE",
+    },
+    {
+      value: "AbC!",
+      shift: 2,
+      result: "CdE!",
+    },
+    {
+      value: "1AbC!",
+      shift: 2,
+      result: "1CdE!",
+    },
+    {
+      value: "1AbC!",
+      shift: 26,
+      result: "1AbC!",
+    },
+    {
+      value: "123",
+      shift: 1,
+      result: "123",
+    },
+    {
+      value: "XyZ",
+      shift: 1,
+      result: "YzA",
+    },
   ];
 
   tests.forEach((test) => {
