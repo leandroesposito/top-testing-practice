@@ -4,7 +4,7 @@ test("analizeArray returns something", () => {
   expect(analizeArray()).toBeDefined();
 });
 
-testCases = [
+const testCases = [
   {
     value: [1, 8, 3, 4, 2, 6],
     result: analizeArray([1, 8, 3, 4, 2, 6]),
