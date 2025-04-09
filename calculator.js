@@ -6,7 +6,12 @@ export default function calculator() {
     subtract: function subtract(a, b) {
       return a - b;
     },
-    divide: function divide() {},
+    divide: function divide(a, b) {
+      if (b === 0) {
+        throw new Error("cannot divide by 0");
+      }
+      return a / b;
+    },
     multiply: function multiply() {},
   };
 }
