@@ -12,6 +12,8 @@ export default function calculator() {
       }
       return a / b;
     },
-    multiply: function multiply() {},
+    multiply: function multiply(a, b) {
+      return a * b;
+    },
   };
 }
