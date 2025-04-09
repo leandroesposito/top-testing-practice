@@ -133,8 +133,40 @@ test("calculator subtract", () => {
     },
   ];
 
+  const floatTests = [
+    {
+      a: 0.1,
+      b: 0,
+      expect: 0.1,
+    },
+    {
+      a: 0.3,
+      b: 0.5,
+      expect: -0.2,
+    },
+    {
+      a: 9.9,
+      b: 9.9,
+      expect: 0,
+    },
+    {
+      a: -0.1,
+      b: 1,
+      expect: -1.1,
+    },
+    {
+      a: -0.14,
+      b: -3.6,
+      expect: 3.46,
+    },
+  ];
+
   const calc = calculator();
   intTests.forEach((test) => {
     expect(calc.subtract(test.a, test.b)).toBe(test.expect);
+  });
+
+  floatTests.forEach((test) => {
+    expect(calc.subtract(test.a, test.b)).toBeCloseTo(test.expect);
   });
 });
