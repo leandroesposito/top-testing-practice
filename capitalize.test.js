@@ -69,4 +69,3 @@ test("capitalize return capitalized string", () => {
     expect(capitalize(test.value)).toBe(test.result);
   });
 });
-console.log(capitalize);
