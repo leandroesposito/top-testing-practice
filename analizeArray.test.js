@@ -1,7 +1,7 @@
 import analizeArray from "./analizeArray.js";
 
 test("analizeArray returns something", () => {
-  expect(analizeArray()).toBeDefined();
+  expect(analizeArray([])).toBeDefined();
 });
 
 const testCases = [
